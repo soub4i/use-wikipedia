@@ -1,0 +1,38 @@
+{
+  "name": "use-wikipedia",
+  "version": "1.0.1",
+  "description": "A starter for creating a new React hook",
+  "author": {
+    "name": "Abderrahim SOUBAI-ELIDRISI",
+    "email": "hello@colbyfayock.com",
+    "url": "https://twitter.com/colbyfayock"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "react-hooks"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir .",
+    "bump": "npm version",
+    "example": "cd example && yarn install && yarn package",
+    "prepublishOnly": "yarn build",
+    "watch": "nodemon --watch src --exec \"yarn build\""
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "nodemon": "^2.0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/colbyfayock/use-wikipedia"
+  },
+  "bugs": {
+    "url": "https://github.com/colbyfayock/use-wikipedia/issues"
+  }
+}
