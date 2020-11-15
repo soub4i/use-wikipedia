@@ -1,15 +1,17 @@
 {
-  "name": "use-wikipedia",
+  "name": "@soubai/use-wikipedia",
   "version": "1.0.1",
-  "description": "A starter for creating a new React hook",
+  "description": "A simple react hook for query wikipedia API",
   "author": {
     "name": "Abderrahim SOUBAI-ELIDRISI",
-    "email": "hello@colbyfayock.com",
-    "url": "https://twitter.com/colbyfayock"
+    "url": "https://twitter.com/soub4i"
   },
   "keywords": [
     "react",
     "hooks",
+    "query",
+    "wikipedia",
+    "api",
     "react-hooks"
   ],
   "main": "index.js",
@@ -30,9 +32,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/colbyfayock/use-wikipedia"
+    "url": "https://github.com/AbderrahimSoubaiElidrissi/use-wikipedia"
   },
   "bugs": {
-    "url": "https://github.com/colbyfayock/use-wikipedia/issues"
+    "url": "https://github.com/AbderrahimSoubaiElidrissi/use-wikipedia/issues"
   }
 }

@@ -1,24 +1,24 @@
+import { useState, useEffect } from 'react'
+
 import { useWikipedia } from '../../use-wikipedia';
 
-import { toCamel } from '../lib/util';
 
-import hookConfig from '../../use-wikipedia/package.json';
 
 export default function Index() {
-  const { name, description, repository = {}, author = {} } = hookConfig;
 
-  const { name: authorName, url: authorUrl } = author;
 
-  const { url: repositoryUrl } = repository;
-  const repositoryExists = typeof repositoryUrl === 'string';
+  const { query } = useWikipedia()
+  let [error, setError] = useState(null);
+  let [data, setData] = useState([]);
+  let [q, setQ] = useState("");
 
-  const repositoryUrlDisplay = repositoryExists && repositoryUrl.split('://')[1];
 
-  const hookSettings = {
-    message: 'Hello, custom hook!'
+
+  const search = async () => {
+    const { data, error } = await query(q)
+    setData(data)
+    setError(error)
   }
-
-  const { message } = useWikipedia(hookSettings);
 
   return (
     <main>
@@ -40,10 +40,6 @@ export default function Index() {
           font-size: 2em;
         }
 
-        img {
-          max-width: 100%;
-        }
-
         pre {
           overflow: auto;
           max-height: 15em;
@@ -58,64 +54,24 @@ export default function Index() {
           margin: 0 auto;
         }
 
-        footer p {
-          font-size: .9em;
-        }
-
-        footer p,
-        footer a {
-          color: #546e7a;
-        }
       `}</style>
 
       <section>
 
-        <h1>{ toCamel(name) }</h1>
+        <div>
+          <input value={q} onChange={({ target: { value } }) => setQ(value)} />
+          <button onClick={search} >
+            Search
+          </button>
+        </div>
 
-        <p>{ description }</p>
+        <pre>Response (search)  : {JSON.stringify(data.search)}</pre>
+        <pre>Response (searchinfo)  : {JSON.stringify(data.searchinfo)}</pre>
+        <pre>Error: {JSON.stringify(error)}</pre>
 
-        { repositoryExists && (
-          <p>
-            <a href={repositoryUrl}>
-              { repositoryUrlDisplay }
-            </a>
-          </p>
-        )}
 
-        <h2>How to use</h2>
-
-        <p>
-          Add your instructions here!
-        </p>
-
-        <h2>Examples</h2>
-
-        <h3>Set and grab message</h3>
-        <p>
-          <strong>Input:</strong>
-        </p>
-        <pre>
-          <code>
-{`const hookSettings = {
-  message: 'Hello, custom hook!'
-}
-
-const { message } = useWikipedia(hookSettings);`}
-          </code>
-        </pre>
-        <p>
-          <strong>Output:</strong>
-        </p>
-        <p>
-          { message }
-        </p>
       </section>
 
-      <footer>
-        <p>
-          Made by <a href={authorUrl}>{ authorName }</a>
-        </p>
-      </footer>
     </main>
   );
 

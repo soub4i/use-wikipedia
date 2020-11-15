@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "AbderrahimSoubaiElidrissi",
+      "name": "Abderrahim SOUBAI-ELIDRISI",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1045274?v=4",
+      "profile": "https://twitter.com/soub4i",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "use-wikipedia",
+  "projectOwner": "AbderrahimSoubaiElidrissi",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
