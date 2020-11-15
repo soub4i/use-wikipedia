@@ -37,9 +37,14 @@ const [q, setQ] = useState("");
 const { query } = useWikipedia();
 
  const search = async () => {
-    const { data, error } = await query(q)
+    // query take search string and limit result per page (default 10)
+    const { data, error } = await query(q , 10)
     setData(data)
     setError(error)
   }
 
 ```
+
+## Example
+
+for more detail about use see `./example/`
