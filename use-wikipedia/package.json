@@ -1,6 +1,6 @@
 {
   "name": "@soubai/use-wikipedia",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple react hook for query wikipedia API",
   "author": {
     "name": "Abderrahim SOUBAI-ELIDRISI",
