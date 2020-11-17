@@ -1,1 +1,1 @@
-export { hook as useWikipedia } from './useWikipedia';
+export { hook as useWikipedia } from "./useWikipedia";
