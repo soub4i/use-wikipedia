@@ -17,7 +17,7 @@ yarn add @soubai/use-wikipedia
 
 ```js
 
-import useWikipedia from '@rehooks/use-wikipedia';
+import useWikipedia from '@soubai/use-wikipedia';
 
 function MyComponent() {
   const { data , error} = useDocumentTitle('Morocco');
